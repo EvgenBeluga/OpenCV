@@ -14,6 +14,7 @@ import static java.lang.Thread.sleep;
 public class CameraServiceImpl {
 
     private static final Logger log = LoggerFactory.getLogger(CameraServiceImpl.class);
+
     private VideoCapture capture;
     private volatile boolean running = false;
 
