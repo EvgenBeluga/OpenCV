@@ -19,12 +19,10 @@ public class IncidentController {
 
     static {
         try {
-//            nu.pattern.OpenCV.loadShared();
             System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
             log.info("OpenCV library loaded - ДААААААА");
 
         } catch (UnsatisfiedLinkError e) {
-//            e.printStackTrace();
             log.error("Unable to load OpenCV library -НЕЕЕЕЕЕТ", e);
         }
     }
@@ -46,7 +44,7 @@ public class IncidentController {
         cameraService.start(frame -> {
             try {
                 if (yoloService.detectPerson(frame)) {
-                    // Сохраняем инцидент
+
                     incidentService.saveIncident(frame, "Person detected   УУУРРРРРАААААА");
 
 //                   mailService.processVideoCapture();
